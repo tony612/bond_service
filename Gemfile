@@ -15,6 +15,9 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
+# A thin and fast web server
+gem "thin", "~> 1.5.1"
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -30,6 +33,11 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :development, :test do
+  # Test your JavaScript without any framework dependencies, in any environment, and with a nice descriptive syntax.
+  gem 'jasmine', :git => "https://github.com/pivotal/jasmine-gem.git"
 end
 
 # Use ActiveModel has_secure_password
