@@ -4,4 +4,9 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  # For the moment when there is no username
+  def display_name
+    email.gsub(/@.*/, "")
+  end
 end
