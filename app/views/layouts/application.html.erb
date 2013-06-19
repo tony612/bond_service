@@ -2,15 +2,30 @@
 <html>
 <head>
   <title>BondService</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans" />
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
+  <div id="maincontainer" class="clearfix">
+    <!-- <p class="notice"><%# notice %></p> -->
+    <!-- <p class="alert"><%# alert %></p> -->
+    <div id="contentwrapper">
+      <div class="main_content">
+        <%= yield %>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        //* show all elements & remove preloader
+          $("html").removeClass("js");
+      });
+    </script>
+  </div>
 
 </body>
 </html>
