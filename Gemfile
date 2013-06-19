@@ -37,7 +37,7 @@ end
 
 group :development, :test do
   # Test your JavaScript without any framework dependencies, in any environment, and with a nice descriptive syntax.
-  gem 'jasmine', :git => "https://github.com/pivotal/jasmine-gem.git"
+  # gem 'jasmine', :git => "https://github.com/pivotal/jasmine-gem.git"
 end
 
 # Use ActiveModel has_secure_password
