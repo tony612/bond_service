@@ -27,7 +27,7 @@
           <li class="divider-vertical hidden-phone hidden-tablet"></li>
           -->
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/assets/user_avatar.png" alt="" class="user_avatar" /> <%= current_user.display_name %> <b class="caret"></b></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= image_tag "user_avatar.png", :class => "user_avatar" %> <%= current_user.display_name %> <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="javascrip:void(0)">My Profile</a></li>
               <li><a href="javascrip:void(0)">Plan Manage</a></li>
