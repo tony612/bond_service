@@ -40,6 +40,9 @@ gem 'jbuilder', '~> 1.2'
 # The font-awesome font bundled as an asset for the rails asset pipeline
 gem "font-awesome-rails"
 
+# Rails 4 requires a gem rails_12factor in order to configure your application logs to be visable via heroku logs and to serve static assets.
+gem 'rails_12factor'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
