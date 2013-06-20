@@ -169,7 +169,7 @@
         .btn_menu {display:none}
 
 	/* main content */
-		#maincontainer {background-image: url(../img/main_bg.gif);background-repeat:repeat-y;min-height:100%}
+		#maincontainer {background-image: image-url('main_bg.gif');background-repeat:repeat-y;min-height:100%}
         #contentwrapper{float: left;width: 100%}
 		.main_content{padding:64px 30px 30px;background:#fff;border-left:1px solid transparent;margin-left:240px}
 		.main_content li{line-height:22px}
@@ -752,7 +752,7 @@
             .gebo-fixed .activeMediaTable th.optional,.gebo-fixed .activeMediaTable td.optional{display:none}
 			.gebo-fixed .brand {width:120px}
 
-			.sidebar_right #maincontainer {background-image: url(../img/main_bg_right.gif);background-position: right 0 }
+			.sidebar_right #maincontainer {background-image: image-url("main_bg_right.gif");background-position: right 0 }
 			.sidebar_right .sidebar {left:auto;right:-1px}
 			.sidebar_right .sidebar_switch {left:auto;right:6px}
 			.sidebar_right .main_content {margin-right:240px;margin-left:0;border-left:none}
