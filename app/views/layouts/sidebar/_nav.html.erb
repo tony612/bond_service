@@ -1,0 +1,99 @@
+<div class="sidebar_inner">
+  <form action="javascript:void(0)" class="input-append" method="post" >
+    <input autocomplete="off" name="query" class="search_query input-medium" size="16" type="text" placeholder="Search..." /><button type="submit" class="btn"><i class="icon-search"></i></button>
+  </form>
+  <div id="side_accordion" class="accordion">
+
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a href="#collapseOne" data-parent="#side_accordion" data-toggle="collapse" class="accordion-toggle">
+          <i class="icon-folder-close"></i>
+        </a>
+      </div>
+      <div class="accordion-body collapse" id="collapseOne">
+        <div class="accordion-inner">
+          <ul class="nav nav-list">
+            <li><%= link_to 'All', '#' %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="accordion-group">
+      <div class="accordion-heading">
+        <a href="#collapseTwo" data-parent="#side_accordion" data-toggle="collapse" class="accordion-toggle">
+          <i class="icon-th"></i> Modules
+        </a>
+      </div>
+      <div class="accordion-body collapse" id="collapseTwo">
+        <div class="accordion-inner">
+          <ul class="nav nav-list">
+            <li><a href="javascript:void(0)">Content blocks</a></li>
+            <li><a href="javascript:void(0)">Tags</a></li>
+            <li><a href="javascript:void(0)">Blog</a></li>
+            <li><a href="javascript:void(0)">FAQ</a></li>
+            <li><a href="javascript:void(0)">Formbuilder</a></li>
+            <li><a href="javascript:void(0)">Location</a></li>
+            <li><a href="javascript:void(0)">Profiles</a></li>
+          </ul>
+        </div>
+      </div>
+    </div> -->
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a href="#collapseThree" data-parent="#side_accordion" data-toggle="collapse" class="accordion-toggle">
+          <i class="icon-user"></i> Account manager
+        </a>
+      </div>
+      <div class="accordion-body collapse" id="collapseThree">
+        <div class="accordion-inner">
+          <ul class="nav nav-list">
+            <li><a href="javascript:void(0)">Users</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <div class="accordion-group">
+      <div class="accordion-heading">
+        <a href="#collapseFour" data-parent="#side_accordion" data-toggle="collapse" class="accordion-toggle">
+          <i class="icon-cog"></i> Configuration
+        </a>
+      </div>
+      <div class="accordion-body collapse" id="collapseFour">
+        <div class="accordion-inner">
+          <ul class="nav nav-list">
+            <li class="nav-header">People</li>
+            <li class="active"><a href="javascript:void(0)">Account Settings</a></li>
+            <li><a href="javascript:void(0)">IP Adress Blocking</a></li>
+            <li class="nav-header">System</li>
+            <li><a href="javascript:void(0)">Site information</a></li>
+            <li><a href="javascript:void(0)">Actions</a></li>
+            <li><a href="javascript:void(0)">Cron</a></li>
+            <li class="divider"></li>
+            <li><a href="javascript:void(0)">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="push"></div>
+</div>
+
+<div class="sidebar_info">
+  <ul class="unstyled">
+    <li>
+      <span class="act act-info"><%= @school_count %></span>
+      <strong>School</strong>
+    </li>
+    <li>
+      <span class="act act-info"><%= @university_count %></span>
+      <strong>University</strong>
+    </li>
+    <li>
+      <span class="act act-info"><%= @college_count %></span>
+      <strong>College</strong>
+    </li>
+  </ul>
+</div>
+
