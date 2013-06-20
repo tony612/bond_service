@@ -1,0 +1,77 @@
+<!-- header -->
+<header>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <%= link_to '#', :class => "brand" do %>
+          <i class="icon-home icon-white"></i> Bond Service
+        <% end %>
+        <ul class="nav user_menu pull-right">
+          <!--
+          <li class="hidden-phone hidden-tablet">
+            <div class="nb_boxes clearfix">
+              <a data-toggle="modal" data-backdrop="static" href="#myMail" class="label ttip_b" title="New messages">25 <i class="splashy-mail_light"></i></a>
+              <a data-toggle="modal" data-backdrop="static" href="#myTasks" class="label ttip_b" title="New tasks">10 <i class="splashy-calendar_week"></i></a>
+            </div>
+          </li>
+          <li class="divider-vertical hidden-phone hidden-tablet"></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle nav_condensed" data-toggle="dropdown"><i class="flag-gb"></i> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascript:void(0)"><i class="flag-de"></i> Deutsch</a></li>
+              <li><a href="javascript:void(0)"><i class="flag-fr"></i> Français</a></li>
+              <li><a href="javascript:void(0)"><i class="flag-es"></i> Español</a></li>
+              <li><a href="javascript:void(0)"><i class="flag-ru"></i> Pусский</a></li>
+            </ul>
+          </li>
+          <li class="divider-vertical hidden-phone hidden-tablet"></li>
+          -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/assets/user_avatar.png" alt="" class="user_avatar" /> <%= current_user.display_name %> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="javascrip:void(0)">My Profile</a></li>
+              <li><a href="javascrip:void(0)">Plan Manage</a></li>
+              <li class="divider"></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="nav" id="mobile-nav">
+          <% if true || current_user.has_role?(:admin) %>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-user icon-white"></i> Users <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Add', '#' %></li>
+                <li><%= link_to 'List', '#' %></li>
+                <li><%= link_to 'Search', '#' %></li>
+                <li><%= link_to 'Import Data', '#' %></li>
+              </ul>
+            </li>
+          <% end %>
+          <% if true || current_user.has_role?(:plan_manager) %>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-list-alt icon-white"></i> Plan <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Upload', '#' %></li>
+                <li><%= link_to 'List', '#' %></li>
+                <li><%= link_to 'Search', '#' %></li>
+                <li><%= link_to 'Import Data', '#' %></li>
+              </ul>
+            </li>
+          <% end %>
+          <% if true || current_user.has_role?(:customer_manager) %>
+            <li class="dropdown">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-smile icon-white"></i> Customer <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Add', '#' %></li>
+                <li><%= link_to 'List', '#' %></li>
+                <li><%= link_to 'Import Data', '#' %></li>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
