@@ -8,7 +8,8 @@ gem "devise", "~> 3.0.0.rc"
 
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
+gem "pg", "~> 0.15.1"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc2'
