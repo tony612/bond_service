@@ -1,4 +1,5 @@
-source 'https://rubygems.org'
+# source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc2'
@@ -36,6 +37,9 @@ gem 'jbuilder', '~> 1.2'
 
 # The font-awesome font bundled as an asset for the rails asset pipeline
 gem "font-awesome-rails"
+
+# A simple Angular.js wrapper for Rails
+gem 'angularjs-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

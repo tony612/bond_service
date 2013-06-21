@@ -1,0 +1,29 @@
+<h1>Users</h1>
+
+<div ng-controller="UsersCtrl">
+  Filter: <input ng-model="query" />
+  Sort by:
+  <select ng-model="orderProp">
+    <option value="id">Id</option>
+    <option value="email">Email</option>
+  </select>
+
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in users | filter:query | orderBy:orderProp">
+        <td>{{user.id}}</td>
+        <td>{{user.email}}</td>
+        <td>
+          <a href="#/users/{{user.id}}">Show</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
