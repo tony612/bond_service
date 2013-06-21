@@ -1,0 +1,57 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1173" measuredH="520" mockupW="931" mockupH="500">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="242" y="20" w="931" h="500" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+        <verticalScrollbar>true</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="306" y="154" w="837" h="344" measuredW="200" measuredH="100" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::LinkBar" x="393" y="126" w="-1" h="-1" measuredW="752" measuredH="19" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u5BA2%u6237%u67E5%u8BE2%20%2C%u8BA1%u5212%u67E5%u8BE2%2C%u4FE1%u606F%u67E5%u8BE2%2C%u6BCF%u65E5%u63D0%u9192%2C%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2C%20%u5B89%u5168%u9000%u51FA</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::HRule" x="323" y="186" w="803" h="-1" measuredW="100" measuredH="10" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="1019" y="99" w="-1" h="-1" measuredW="91" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u8D26%u53F7%u79CD%u7C7B%uFF1A%u5BA2%u6237</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::BreadCrumbs" x="350" y="162" w="-1" h="-1" measuredW="76" measuredH="24" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u4FE1%u606F%u67E5%u8BE2</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="356" y="206" w="-1" h="-1" measuredW="65" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u5F53%u524D%u4FE1%u606F%uFF1A</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::List" x="356" y="247" w="-1" h="-1" measuredW="100" measuredH="126" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u6240%u6301%u8BA1%u5212%0A%u6240%u5C5E%u8425%u9500%u5458%0A%u6240%u6709%u8D44%u4EA7%0A...</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Alert" x="978" y="384" w="173" h="105" measuredW="200" measuredH="117" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u5728%u7EBF%u54A8%u8BE2%0A%u662F%u5426%u5728%u7EBF%u54A8%u8BE2%0A%u662F%2C%u5426</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="575" y="206" w="-1" h="-1" measuredW="65" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u4FE1%u606F%u8BE6%u60C5%uFF1A</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::List" x="570" y="247" w="364" h="126" measuredW="100" measuredH="126" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>...</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="440" y="247" w="-1" h="126" measuredW="16" measuredH="100" zOrder="11" locked="false" isInGroup="-1"/>
+  </controls>
+</mockup>
