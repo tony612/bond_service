@@ -6,7 +6,6 @@ UserIndexCtrl.$inject = ['$scope', 'Users']
 
 UserNewCtrl = ($scope, $location, Users, User) ->
   $scope.user = {}
-  debugger
 
   $scope.create = (user) ->
     u = new Users({user: user})
@@ -18,10 +17,12 @@ UserNewCtrl.$inject = ['$scope', '$location', 'Users']
 UserCtrl = ($scope, $routeParams, User) ->
   $scope.user = User.show({userId: $routeParams.userId})
 
-UserNewCtrl.$inject = ['$scope', '$routeParams', 'User']
+UserCtrl.$inject = ['$scope', '$routeParams', 'User']
 
 UserEditCtrl = ($scope) ->
   {}
+
+UserEditCtrl.$inject = ['$scope']
 
 window.UserIndexCtrl = UserIndexCtrl
 window.UserNewCtrl = UserNewCtrl
