@@ -15,10 +15,10 @@ UserNewCtrl = ($scope, $location, Users, User) ->
 
 UserNewCtrl.$inject = ['$scope', '$location', 'Users']
 
-UserCtrl = ($scope, User, $routeParams) ->
-  $scope.user = User.show
+UserCtrl = ($scope, $routeParams, User) ->
+  $scope.user = User.show({userId: $routeParams.userId})
 
-UserNewCtrl.$inject = ['$scope', 'User']
+UserNewCtrl.$inject = ['$scope', '$routeParams', 'User']
 
 UserEditCtrl = ($scope) ->
   {}
