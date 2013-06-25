@@ -1,21 +1,22 @@
-@UsersCtrl = ($scope, $http) ->
-  $http.get('/users.json').success (data) ->
-    $scope.users = data
+UserIndexCtrl = ($scope, Users) ->
+  $scope.users = Users.index
 
-    #$scope.users = [
-    #  {
-    #    id: 1,
-    #    email: "foo@e.com"
-    #  },
-    #  {
-    #    id: 2,
-    #    email: "bar@e.com"
-    #  },
-    #  {
-    #    id: 3,
-    #    email: "foobar@e.com"
-    #  }
-    #]
+UserIndexCtrl.$inject = ['$scope', 'Users']
 
-@UsersCtrl.$inject = ['$scope', '$http']
+UserNewCtrl = ($scope) ->
+  {}
 
+UserNewCtrl.$inject = ['$scope']
+
+UserCtrl = ($scope, User, $routeParams) ->
+  $scope.user = User.show
+
+UserNewCtrl.$inject = ['$scope', 'User']
+
+UserEditCtrl = ($scope) ->
+  {}
+
+window.UserIndexCtrl = UserIndexCtrl
+window.UserNewCtrl = UserNewCtrl
+window.UserCtrl = UserCtrl
+window.UserEditCtrl = UserEditCtrl
