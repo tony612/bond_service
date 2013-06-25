@@ -1,5 +1,6 @@
 UserIndexCtrl = ($scope, Users) ->
-  $scope.users = Users.index
+  $scope.users = Users.index()
+  $scope.orderProp = "id"
 
 UserIndexCtrl.$inject = ['$scope', 'Users']
 
