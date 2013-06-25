@@ -5,7 +5,7 @@ angular.module('bondserviceServices', ['ngResource'])
   })
 )
 .factory('User', ($resource) ->
-  $resource('users/:userId.json', {}, {
+  $resource('/users/:userId.json', {}, {
     show: {method:'GET'},
     update: {method: 'PUT'}
   })
