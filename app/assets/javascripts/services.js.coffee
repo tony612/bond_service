@@ -1,8 +1,7 @@
 angular.module('bondserviceServices', ['ngResource'])
 .factory('Users', ($resource) ->
   $resource('/users.json', {}, {
-    index: {method: 'GET', isArray: true},
-    create: {method: 'POST'}
+    index: {method: 'GET', isArray: true}
   })
 )
 .factory('User', ($resource) ->

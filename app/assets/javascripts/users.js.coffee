@@ -3,10 +3,16 @@ UserIndexCtrl = ($scope, Users) ->
 
 UserIndexCtrl.$inject = ['$scope', 'Users']
 
-UserNewCtrl = ($scope) ->
-  {}
+UserNewCtrl = ($scope, $location, Users, User) ->
+  $scope.user = {}
+  debugger
 
-UserNewCtrl.$inject = ['$scope']
+  $scope.create = (user) ->
+    u = new Users({user: user})
+    u.$save (user) ->
+      $location.path("/users/#{user.id}")
+
+UserNewCtrl.$inject = ['$scope', '$location', 'Users']
 
 UserCtrl = ($scope, User, $routeParams) ->
   $scope.user = User.show

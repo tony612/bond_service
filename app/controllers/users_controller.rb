@@ -20,4 +20,17 @@ class UsersController < ApplicationController
 
   def new
   end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      respond_with { |format| format.json {render json: @user} }
+    else
+      render json: {msg: "Saved error!"}
+    end
+  end
+private
+  def user_params
+    params.required(:user).permit(:email, :password)
+  end
 end
