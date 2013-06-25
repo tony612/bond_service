@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   respond_to :html, :json
+  layout false
+
   def index
     @users = User.all
     respond_with do |format|
