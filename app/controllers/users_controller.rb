@@ -21,6 +21,9 @@ class UsersController < ApplicationController
   def new
   end
 
+  def modify
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -29,6 +32,22 @@ class UsersController < ApplicationController
       render json: {msg: "Saved error!"}
     end
   end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      respond_to do |format|
+        format.html { redirect_to users_path }
+        format.json { render :nothing => true, :status => :ok }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to users_path }
+        format.json { render :nothing => true, :status => :bad_request }
+      end
+    end
+  end
+
   def destroy
     @user = User.find(params[:id])
     unless @user == current_user

@@ -28,10 +28,21 @@ UserCtrl = ($scope, $routeParams, User) ->
 
 UserCtrl.$inject = ['$scope', '$routeParams', 'User']
 
-UserEditCtrl = ($scope) ->
-  {}
+UserEditCtrl = ($scope, $routeParams, $location, User) ->
+  userId = $routeParams.userId
+  user = new User.show({userId: userId}, (user) ->
+    debugger
+    $scope.user = {email: user.email}
+  )
 
-UserEditCtrl.$inject = ['$scope']
+  $scope.update = (user) ->
+    debugger
+    new User({user: user}).$update({userId: userId}, (user) ->
+      $location.path("/users/#{userId}")
+    )
+
+
+UserEditCtrl.$inject = ['$scope', '$routeParams', '$location', 'User']
 
 window.UserIndexCtrl = UserIndexCtrl
 window.UserNewCtrl = UserNewCtrl

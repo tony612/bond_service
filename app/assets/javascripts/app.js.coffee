@@ -7,7 +7,7 @@ angular.module('bondservice', ['bondserviceServices'])
     .when('/users/:userId', {templateUrl: (params) ->
       "/users/#{params.userId}"
     , controller: UserCtrl})
-    .when('/users/:userId/edit', {templateUrl: '/users/edit.html', controller: UserEditCtrl})
+    .when('/users/:userId/edit', {templateUrl: '/users/modify.html', controller: UserEditCtrl})
   ])
   .config(["$httpProvider", (provider) ->
     provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
