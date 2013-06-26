@@ -17,11 +17,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="user in users | filter:query | orderBy:orderProp">
+      <tr ng-repeat="user in users | filter:query | orderBy:orderProp" id="user_{{user.id}}">
         <td>{{user.id}}</td>
         <td>{{user.email}}</td>
         <td>
-          <a href="#/users/{{user.id}}">Show</a>
+          <a href="#/users/{{user.id}}" class="sepV_a"><i class="icon-eye-open"></i></a>
+          <a href="#/users/{{user.id}}/edit" class="sepV_a"><i class="icon-pencil"></i></a>
+          <a href="javascript:void(0)" ng-click="destroy({{user.id}})"><i class="icon-trash"></i></a>
         </td>
       </tr>
     </tbody>

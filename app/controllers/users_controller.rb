@@ -29,6 +29,21 @@ class UsersController < ApplicationController
       render json: {msg: "Saved error!"}
     end
   end
+  def destroy
+    @user = User.find(params[:id])
+    unless @user == current_user
+      @user.destroy
+      respond_to do |format|
+        format.html { redirect_to users_path }
+        format.json { render :nothing => true, :status => :ok }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to users_path }
+        format.json { render :nothing => true, :status => :bad_request }
+      end
+    end
+  end
 private
   def user_params
     params.required(:user).permit(:email, :password)

@@ -1,10 +1,19 @@
-UserIndexCtrl = ($scope, Users) ->
+UserIndexCtrl = ($scope, Users, User) ->
   $scope.users = Users.index()
   $scope.orderProp = "id"
 
-UserIndexCtrl.$inject = ['$scope', 'Users']
+  $scope.destroy = (userId) ->
+    new User.delete({userId: userId}, (resource) ->
+      # Ajax success
+      $('tr#user_'+userId).fadeOut()
+    , (response) ->
+      # Ajax fail
+      console.log(response)
+    )
 
-UserNewCtrl = ($scope, $location, Users, User) ->
+UserIndexCtrl.$inject = ['$scope', 'Users', 'User']
+
+UserNewCtrl = ($scope, $location, Users) ->
   $scope.user = {}
 
   $scope.create = (user) ->
