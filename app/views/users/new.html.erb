@@ -1,0 +1,46 @@
+<h3 class="heading">New User</h3>
+<form class="form_validation_reg" >
+  <div class="formSep">
+    <div class="row-fluid">
+      <div class="span4">
+        <label for="user_email">Email <span class="f_req">*</span></label>
+        <input id="user_email" type="text" name="user[email]" class="span12" ng-model="user.email" />
+      </div>
+    </div>
+  </div>
+  <div class="formSep">
+    <div class="row-fluid">
+      <div class="span4">
+        <label for="user_password">Password <span class="f_req">*</span></label>
+        <input id="user_password" type="password" name="user[password]" class="span12" ng-model="user.password" />
+      </div>
+      <div class="span4">
+        <label for="user_password_confirmation">Password Confirmation <span class="f_req">*</span></label>
+        <input id="user_password_confirmation" type="password" name="user[password_confirmation]" class="span12" ng-model="user.password_confirmation" />
+      </div>
+    </div>
+  </div>
+  <div class="formSep">
+    <div class="row-fluid">
+      <div class="span4">
+        <label for="user_number">Number <span class="f_req">*</span></label>
+        <input id="user_number" type="text" name="user[number]" class="span12" ng-model="user.number" />
+      </div>
+      <div class="span4">
+        <label for="user_name">Name <span class="f_req">*</span></label>
+        <input id="user_name" type="text" name="user[name]" class="span12" ng-model="user.name" />
+      </div>
+    </div>
+  </div>
+  <div class="formSep">
+    <div class="row-fluid">
+      <label for="user_desc">Description </label>
+      <textarea id="user_desc" name="user[desc]" cols="10" rows="3" class="span8" ng-model="user.desc"></textarea>
+    </div>
+  </div>
+  <div class="form-actions">
+    <button class="btn btn-inverse" type="submit" ng-click="create(user)">Save changes</button>
+    <a href="#/users" class="btn">Cancel</a>
+  </div>
+</form>
+

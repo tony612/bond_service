@@ -3,7 +3,7 @@
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container-fluid">
-        <%= link_to '#', :class => "brand" do %>
+        <%= link_to 'javascript:void(0)', :class => "brand" do %>
           <i class="icon-home icon-white"></i> Bond Service
         <% end %>
         <ul class="nav user_menu pull-right">
@@ -27,7 +27,7 @@
           <li class="divider-vertical hidden-phone hidden-tablet"></li>
           -->
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= image_tag "user_avatar.png", :class => "user_avatar" %> <%= current_user.display_name %> <b class="caret"></b></a>
+            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><%= image_tag "user_avatar.png", :class => "user_avatar" %> <%= current_user.display_name %> <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a href="javascrip:void(0)">My Profile</a></li>
               <li><a href="javascrip:void(0)">Plan Manage</a></li>
@@ -40,18 +40,17 @@
         <ul class="nav" id="mobile-nav">
           <% if true || current_user.has_role?(:admin) %>
             <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-user icon-white"></i> Users <b class="caret"></b></a>
+              <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)"><i class="icon-user icon-white"></i> Users <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><%= link_to 'Add', '#' %></li>
-                <li><%= link_to 'List', '#' %></li>
-                <li><%= link_to 'Search', '#' %></li>
-                <li><%= link_to 'Import Data', '#' %></li>
+                <li><%= link_to 'Add', '#users/new' %></li>
+                <li><%= link_to 'List', '#users' %></li>
+                <li><%= link_to 'Import Data', '#users/import' %></li>
               </ul>
             </li>
           <% end %>
           <% if true || current_user.has_role?(:plan_manager) %>
             <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-list-alt icon-white"></i> Plan <b class="caret"></b></a>
+              <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)"><i class="icon-list-alt icon-white"></i> Plan <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><%= link_to 'Upload', '#' %></li>
                 <li><%= link_to 'List', '#' %></li>
@@ -62,7 +61,7 @@
           <% end %>
           <% if true || current_user.has_role?(:customer_manager) %>
             <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-smile icon-white"></i> Customer <b class="caret"></b></a>
+              <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)"><i class="icon-smile icon-white"></i> Customer <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><%= link_to 'Add', '#' %></li>
                 <li><%= link_to 'List', '#' %></li>
