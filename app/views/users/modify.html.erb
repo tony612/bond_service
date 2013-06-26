@@ -20,9 +20,27 @@
       </div>
     </div>
   </div>
+  <div class="formSep">
+    <div class="row-fluid">
+      <div class="span4">
+        <label for="user_number">Number <span class="f_req">*</span></label>
+        <input id="user_number" type="text" name="user[number]" class="span12" ng-model="user.number" />
+      </div>
+      <div class="span4">
+        <label for="user_name">Name <span class="f_req">*</span></label>
+        <input id="user_name" type="text" name="user[name]" class="span12" ng-model="user.name" />
+      </div>
+    </div>
+  </div>
+  <div class="formSep">
+    <div class="row-fluid">
+      <label for="user_desc">Description </label>
+      <textarea id="user_desc" name="user[desc]" cols="10" rows="3" class="span8" ng-model="user.desc"></textarea>
+    </div>
+  </div>
   <div class="form-actions">
     <button class="btn btn-inverse" type="submit" ng-click="update(user)">Save changes</button>
-    <!-- <button class="btn">Cancel</button> -->
+    <a href="#/users" class="btn">Cancel</a>
   </div>
 </form>
 
