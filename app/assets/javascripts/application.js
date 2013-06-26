@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require unstable/angular
+//= require unstable/angular-resource
 //= require bootstrap
 //= require_tree ./gebo
 //= require_tree .
