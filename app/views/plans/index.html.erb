@@ -1,0 +1,39 @@
+<h1>Plans</h1>
+
+<div>
+  Filter: <input ng-model="query" />
+  Sort by:
+  <select ng-model="orderProp">
+    <option value="id">Id</option>
+    <option value="name">Name</option>
+    <option value="category">Category</option>
+    <option value="desc">Description</option>
+    <option value="content">Content</option>
+  </select>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Content</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="plan in plans | filter:query | orderBy:orderProp" id="plan_{{plan.id}}">
+        <td>{{plan.id}}</td>
+        <td>{{plan.name}}</td>
+        <td>{{plan.category}}</td>
+        <td>{{plan.desc}}</td>
+        <td>{{plan.content}}</td>
+        <td>
+          <a href="#/plans/{{plan.id}}" class="sepV_a"><i class="icon-eye-open"></i></a>
+          <a href="#/plans/{{plan.id}}/edit" class="sepV_a"><i class="icon-pencil"></i></a>
+          <a href="javascript:void(0)" ng-click="destroy({{plan.id}})"><i class="icon-trash"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
