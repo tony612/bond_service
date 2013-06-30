@@ -1,4 +1,4 @@
-angular.module('bondservice', ['bondserviceServices'])
+angular.module('bondservice', ['bondserviceServices', '$strap.directives'])
   .config(['$routeProvider', ($routeProvider) ->
     $routeProvider
     .when('/users', {templateUrl: '/users.html', controller: UserIndexCtrl})
