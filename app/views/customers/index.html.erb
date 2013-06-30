@@ -1,0 +1,48 @@
+<h1>Customers</h1>
+
+<div>
+  Filter: <input ng-model="query" />
+  Sort by:
+  <select ng-model="orderProp">
+    <option value="id">Id</option>
+    <option value="name">Name</option>
+    <option value="fund_account">Fund account</option>
+    <option value="gender">Gender</option>
+    <option value="id_no">ID no.</option>
+    <option value="address">Address</option>
+    <option value="phone">Phone</option>
+  </select>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>ID no</th>
+        <th>Birthday</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Fund account</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="customer in customers | filter:query | orderBy:orderProp" id="customer_{{customer.id}}">
+        <td>{{customer.id}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.gender}}</td>
+        <td>{{customer.id_no}}</td>
+        <td>{{customer.birthday | date:'fullDate'}}</td>
+        <td>{{customer.phone}}</td>
+        <td>{{customer.address}}</td>
+        <td>{{customer.fund_account}}</td>
+        <td>
+          <a href="#/customers/{{customer.id}}" class="sepV_a"><i class="icon-eye-open"></i></a>
+          <a href="#/customers/{{customer.id}}/edit" class="sepV_a"><i class="icon-pencil"></i></a>
+          <a href="javascript:void(0)" ng-click="destroy({{customer.id}})"><i class="icon-trash"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
