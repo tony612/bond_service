@@ -8,5 +8,6 @@ class ApplicationController < ActionController::Base
 protected
   def set_sidebar_data
     @user_count = User.count
+    @plan_count = Plan.count
   end
 end
