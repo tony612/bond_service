@@ -1,11 +1,20 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
+  respond_to :html, :json
+  layout false
 
   def index
     @customers = Customer.all
+    respond_with do |format|
+      format.html
+      format.json { render json: @customers }
+    end
   end
 
   def show
+    respond_with do |format|
+      format.json { render json: @customer }
+    end
   end
 
   def new
@@ -20,11 +29,9 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to @customer, notice: 'Customer was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @customer }
+        format.json { render json: @customer }
       else
-        format.html { render action: 'new' }
-        format.json { render json: @customer.errors, status: :unprocessable_entity }
+        format.json { render msg: "Saved error!"}
       end
     end
   end
@@ -45,7 +52,7 @@ class CustomersController < ApplicationController
     @customer.destroy
     respond_to do |format|
       format.html { redirect_to customers_url }
-      format.json { head :no_content }
+      format.json { render :nothing => true, :status => :ok }
     end
   end
 

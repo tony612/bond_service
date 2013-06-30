@@ -1,39 +1,47 @@
-<p id="notice"><%= notice %></p>
+<div class="row-fluid">
+  <div class="span12">
+    <h3 class="heading">{{customer.name}}</h3>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="vcard">
+          <ul class="plan">
+            <li class="v-heading">
+              Personal info
+            </li>
+            <li>
+              <span class="item-key">Gender</span>
+              <div class="vcard-item">{{customer.gender}}</div>
+            </li>
+            <li>
+              <span class="item-key">ID no.</span>
+              <div class="vcard-item">{{customer.id_no}}</div>
+            </li>
+            <li>
+              <span class="item-key">Birthday</span>
+              <div class="vcard-item">{{customer.birthday}}</div>
+            </li>
+            <li class="v-heading">
+              Contact info
+            </li>
+            <li>
+              <span class="item-key">Phone</span>
+              <div class="vcard-item">{{customer.phone}}</div>
+            </li>
+            <li>
+              <span class="item-key">Address</span>
+              <div class="vcard-item">{{user.address}}</div>
+            </li>
+            <li class="v-heading">
+              Bond info
+            </li>
+            <li>
+              <span class="item-key">Fund account</span>
+              <div class="vcard-item">{{customer.fund_account}}</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @customer.name %>
-</p>
-
-<p>
-  <strong>Fund account:</strong>
-  <%= @customer.fund_account %>
-</p>
-
-<p>
-  <strong>Gender:</strong>
-  <%= @customer.gender %>
-</p>
-
-<p>
-  <strong>Id no:</strong>
-  <%= @customer.id_no %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @customer.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @customer.phone %>
-</p>
-
-<p>
-  <strong>Birthday:</strong>
-  <%= @customer.birthday %>
-</p>
-
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>

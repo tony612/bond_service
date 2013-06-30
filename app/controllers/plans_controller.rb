@@ -50,15 +50,9 @@ class PlansController < ApplicationController
 
   def destroy
     @plan = Plan.find(params[:id])
-    if @plan.present?
-      @plan.destroy
-      respond_to do |format|
-        format.json { render :nothing => true, :status => :ok }
-      end
-    else
-      respond_to do |format|
-        format.json { render :nothing => true, :status => :bad_request }
-      end
+    @plan.destroy
+    respond_to do |format|
+      format.json { render :nothing => true, :status => :ok }
     end
   end
 

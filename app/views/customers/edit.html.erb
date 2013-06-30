@@ -1,6 +1,66 @@
-<h1>Editing customer</h1>
+<h3 class="heading">New Customer</h3>
+<form class="form_validation_reg" >
+  <div class="formSep">
+    <div class="row-fluid">
+      <div class="span4">
+        <label for="customer_name">Name <span class="f_req">*</span></label>
+        <input id="customer_name" type="text" name="customer[name]" class="span12" ng-model="customer.name" />
+      </div>
+      <div class="span4">
+        <label><span class="error_placement">Gender</span> <span class="f_req">*</span></label>
+        <label class="radio inline">
+          <input type="radio" value="male" name="customer[gender]" ng-model="customer.gender">
+            Male
+          </label>
+          <label class="radio inline">
+            <input type="radio" value="Female" name="customer[gender]" ng-model="customer.gender">
+              Female
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<%= render 'form' %>
+  <div class="formSep">
+    <div class="row-fluid">
+      <div class="span4">
+        <label for="customer_id_no">ID no. </label>
+        <input id="customer_id_no" type="text" name="customer[id_no]" class="span12" ng-model="customer.id_no" />
+      </div>
+      <div class="span4">
+        <label for="customer_birthday">Birthday </label>
+        <div class="control-group input-append">
+          <input type="text" ng-model="customer.birthday" data-date-format="dd/mm/yyyy" bs-datepicker />
+          <button type="button" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<%= link_to 'Show', @customer %> |
-<%= link_to 'Back', customers_path %>
+  <div class="formSep">
+    <div class="row-fluid">
+      <div class="span4">
+        <label for="customer_phone">Phone </label>
+        <input id="customer_phone" type="text" name="customer[phone]" class="span12" ng-model="customer.phone" />
+      </div>
+      <div class="span4">
+        <label for="customer_address">Address </label>
+        <input id="customer_address" type="text" name="customer[address]" class="span12" ng-model="customer.address" />
+      </div>
+    </div>
+  </div>
+  <div class="formSep">
+    <div class="row-fluid">
+      <div class="span8">
+        <label for="customer_fund_account">Fund Account </label>
+        <input id="customer_fund_account" type="text" name="customer[fund_account]" class="span12" ng-model="customer.fund_account" />
+      </div>
+    </div>
+  </div>
+  <div class="form-actions">
+    <button class="btn btn-inverse" type="submit" ng-click="update(customer)">Save changes</button>
+    <a href="#/customers" class="btn">Cancel</a>
+  </div>
+</form>
+
