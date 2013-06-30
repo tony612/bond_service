@@ -1,4 +1,5 @@
 BondService::Application.routes.draw do
+  resources :customers
   resources :plans
   get "dashboard/index"
   post "users", :to => "users#create"
