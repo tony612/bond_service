@@ -9,6 +9,18 @@ angular.module('bondservice', ['bondserviceServices'])
     , controller: UserCtrl})
     .when('/users/:userId/edit', {templateUrl: '/users/modify.html', controller: UserEditCtrl})
   ])
+  .config(['$routeProvider', ($routeProvider) ->
+    $routeProvider
+    .when('/plans', {templateUrl: '/plans.html', controller: PlanIndexCtrl})
+    .when('/plans/new', {templateUrl: '/plans/new.html', controller: PlanNewCtrl})
+    # The templateUrl param(func) method is available in the unstable of angular
+    .when('/plans/:planId', {templateUrl: (params) ->
+      "/plans/#{params.planId}"
+    , controller: PlanCtrl})
+    .when('/plans/:planId/edit', {templateUrl: (params) ->
+      "/plans/#{params.planId}/edit.html"
+    , controller: PlanEditCtrl})
+  ])
   .config(["$httpProvider", (provider) ->
     provider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
   ])

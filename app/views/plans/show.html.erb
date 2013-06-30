@@ -1,2 +1,30 @@
-<h1>Plans#show</h1>
-<p>Find me in app/views/plans/show.html.erb</p>
+<div class="row-fluid">
+  <div class="span12">
+    <h3 class="heading">{{plan.name}}</h3>
+    <div class="row-fluid">
+      <div class="span12">
+        <div class="vcard">
+          <ul class="plan">
+            <li>
+              <span class="item-key">Name</span>
+              <div class="vcard-item">{{plan.name}}</div>
+            </li>
+            <li>
+              <span class="item-key">Category</span>
+              <div class="vcard-item">{{plan.category}}</div>
+            </li>
+            <li>
+              <span class="item-key">Description</span>
+              <div class="vcard-item">{{plan.desc}}</div>
+            </li>
+            <li>
+              <span class="item-key">Content</span>
+              <div class="vcard-item">{{plan.content}}</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
