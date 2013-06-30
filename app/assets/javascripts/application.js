@@ -15,5 +15,6 @@
 //= require unstable/angular
 //= require unstable/angular-resource
 //= require bootstrap
+//= require angular-strap
 //= require_tree ./gebo
 //= require_tree .
