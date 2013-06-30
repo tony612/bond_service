@@ -1,34 +1,34 @@
 angular.module('bondserviceServices', ['ngResource'])
-.factory('Users', ($resource) ->
+.factory('Users', ['$resource', ($resource) ->
   $resource('/users.json', {}, {
     index: {method: 'GET', isArray: true}
   })
-)
-.factory('User', ($resource) ->
+])
+.factory('User', ['$resource', ($resource) ->
   $resource('/users/:userId.json', {}, {
     show: {method:'GET'},
     update: {method: 'PUT'}
   })
-)
-.factory('Plans', ($resource) ->
+])
+.factory('Plans', ['$resource', ($resource) ->
   $resource('/plans.json', {}, {
     index: {method: 'GET', isArray: true}
   })
-)
-.factory('Plan', ($resource) ->
+])
+.factory('Plan', ['$resource', ($resource) ->
   $resource('/plans/:planId.json', {}, {
     show: {method:'GET'},
     update: {method: 'PUT'}
   })
-)
-.factory('Customers', ($resource) ->
+])
+.factory('Customers', ['$resource', ($resource) ->
   $resource('/customers.json', {}, {
     index: {method: 'GET', isArray: true}
   })
-)
-.factory('Customer', ($resource) ->
+])
+.factory('Customer', ['$resource', ($resource) ->
   $resource('/customers/:customerId.json', {}, {
     show: {method:'GET'},
     update: {method: 'PUT'}
   })
-)
+])
