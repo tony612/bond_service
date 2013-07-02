@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   respond_to :html, :json
-  layout false
+  layout false, :except => ["upload"]
 
   def index
     @users = User.all
@@ -62,6 +62,14 @@ class UsersController < ApplicationController
         format.json { render :nothing => true, :status => :bad_request }
       end
     end
+  end
+
+  def upload
+  end
+
+  def import
+    User.import params[:user][:file]
+    redirect_to root_path(:anchor => "users")
   end
 private
   def user_params
