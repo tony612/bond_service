@@ -1,7 +1,10 @@
 BondService::Application.routes.draw do
-  get "customers/upload"
-  post "customers/import"
-  resources :customers
+  resources :customers do
+    collection do
+      get "upload"
+      post "import"
+    end
+  end
   resources :plans
   get "dashboard/index"
   post "users", :to => "users#create"
