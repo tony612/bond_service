@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-# source 'http://ruby.taobao.org'
+# source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 ruby '2.0.0'
 
@@ -46,6 +46,9 @@ gem 'rails_12factor'
 
 # A simple Angular.js wrapper for Rails
 gem 'angularjs-rails'
+
+# Roo can access the contents of various spreadsheet files. It can handle * Openoffice * Excel * Google spreadsheets * Excelx * Libreoffice * CSV
+gem "roo", "~> 1.11.2"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

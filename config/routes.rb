@@ -1,4 +1,6 @@
 BondService::Application.routes.draw do
+  get "customers/upload"
+  post "customers/import"
   resources :customers
   resources :plans
   get "dashboard/index"

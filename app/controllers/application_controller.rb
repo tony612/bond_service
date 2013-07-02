@@ -9,5 +9,6 @@ protected
   def set_sidebar_data
     @user_count = User.count
     @plan_count = Plan.count
+    @customer_count = Customer.count
   end
 end

@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
   respond_to :html, :json
-  layout false
+  layout false, :except => ["upload"]
 
   def index
     @customers = Customer.all
@@ -54,6 +54,14 @@ class CustomersController < ApplicationController
       format.html { redirect_to customers_url }
       format.json { render :nothing => true, :status => :ok }
     end
+  end
+
+  def upload
+  end
+
+  def import
+    Customer.import params[:customer][:file]
+    redirect_to root_path(:anchor => "customers")
   end
 
   private
