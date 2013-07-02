@@ -1,0 +1,22 @@
+<h3 class="heading">Import customer</h3>
+<%= form_tag customers_import_path, multipart: true do %>
+  <div data-provides="fileupload" class="fileupload fileupload-new"><input type="hidden" />
+    <div class="input-append">
+      <div class="uneditable-input span2">
+        <i class="icon-file fileupload-exists"></i>
+        <span class="fileupload-preview"></span>
+      </div>
+      <span class="btn btn-file">
+        <span class="fileupload-new">Select file</span>
+        <span class="fileupload-exists">Change</span>
+        <%= file_field_tag "customer[file]" %>
+      </span>
+      <a data-dismiss="fileupload" class="btn fileupload-exists" href="#">Remove</a>
+    </div>
+    <div class="form-actions">
+      <%= submit_tag "Import excel", :class => "btn btn-success" %>
+      <a href="/#/customers" class="btn">Cancel</a>
+    </div>
+  </div>
+<% end %>
+
