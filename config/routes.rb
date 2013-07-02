@@ -1,13 +1,21 @@
 BondService::Application.routes.draw do
-  get "customers/upload"
-  post "customers/import"
-  resources :customers
+  resources :customers do
+    collection do
+      get "upload"
+      post "import"
+    end
+  end
   resources :plans
   get "dashboard/index"
   post "users", :to => "users#create"
   get "users/modify", :to => "users#modify"
   devise_for :users
-  resources :users
+  resources :users do
+    collection do
+      get "upload"
+      post "import"
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
