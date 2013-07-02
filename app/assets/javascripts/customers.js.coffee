@@ -43,7 +43,16 @@ CustomerEditCtrl = ($scope, $routeParams, $location, Customer) ->
 
 CustomerEditCtrl.$inject = ['$scope', '$routeParams', '$location', 'Customer']
 
+CustomerImportCtrl = ($scope) ->
+  $scope.customer = {}
+  $scope.upload = (customer) ->
+    debugger
+    customer.file.submit()
+
+CustomerImportCtrl.$inject = ['$scope']
+
 window.CustomerIndexCtrl = CustomerIndexCtrl
 window.CustomerNewCtrl = CustomerNewCtrl
 window.CustomerCtrl = CustomerCtrl
 window.CustomerEditCtrl = CustomerEditCtrl
+window.CustomerImportCtrl = CustomerImportCtrl
