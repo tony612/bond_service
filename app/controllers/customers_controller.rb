@@ -8,9 +8,6 @@ class CustomersController < ApplicationController
   end
 
   def show
-    respond_with do |format|
-      format.json { render json: @customer }
-    end
   end
 
   def new
