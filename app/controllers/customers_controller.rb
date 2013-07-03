@@ -4,11 +4,7 @@ class CustomersController < ApplicationController
   layout false, :except => ["upload"]
 
   def index
-    @customers = Customer.all
-    respond_with do |format|
-      format.html
-      format.json { render json: @customers }
-    end
+    @customers = Customer.includes(:customer_category)
   end
 
   def show
