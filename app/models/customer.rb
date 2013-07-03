@@ -1,5 +1,10 @@
 class Customer < ActiveRecord::Base
+  belongs_to :customer_category
   VALID_HEADER = %w{name fund_account gender id_no address phone birthday}
+
+  def category
+    customer_category
+  end
 
   def self.import(file)
     excel = open_excel(file)
