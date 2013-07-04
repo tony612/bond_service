@@ -4,7 +4,9 @@ json.array! @customers do |customer|
     if !(category = customer.category)
       json.null!
     else
-      json.extract! category, :id, :name, :desc
+      json.id category.id
+      json.name category.name || "NULL"
+      json.desc category.desc || "NULL"
     end
   end
 end
