@@ -52,8 +52,24 @@ CustomerImportCtrl = ($scope) ->
 
 CustomerImportCtrl.$inject = ['$scope']
 
+
+CustomerCategoryIndexCtrl = ($scope, CustomerCategory, CustomerCategories) ->
+  $scope.categories = CustomerCategories.index()
+  $scope.orderProp = "id"
+
+  $scope.destroy = (categoryId) ->
+    new CustomerCategory.delete({categoryId: categoryId}, (resource) ->
+      # Ajax success
+      $('tr#category_'+categoryId).fadeOut()
+    , (response) ->
+      # Ajax fail
+      console.log(response)
+    )
+
+CustomerCategoryIndexCtrl.$inject = ['$scope', 'CustomerCategory', 'CustomerCategories']
 window.CustomerIndexCtrl = CustomerIndexCtrl
 window.CustomerNewCtrl = CustomerNewCtrl
 window.CustomerCtrl = CustomerCtrl
 window.CustomerEditCtrl = CustomerEditCtrl
 window.CustomerImportCtrl = CustomerImportCtrl
+window.CustomerCategoryIndexCtrl = CustomerCategoryIndexCtrl
