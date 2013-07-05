@@ -53,6 +53,15 @@ class CustomersController < ApplicationController
     end
   end
 
+  def destroy_category
+    @category = CustomerCategory.find(params[:category_id])
+    @category.destroy
+    respond_to do |format|
+      format.html { redirect_to customers_url }
+      format.json { render :nothing => true, :status => :ok }
+    end
+  end
+
   def create
     @customer = Customer.new(customer_params)
 
