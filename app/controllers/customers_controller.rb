@@ -57,6 +57,10 @@ class CustomersController < ApplicationController
     redirect_to root_path(:anchor => "customers")
   end
 
+  def categories
+    @categories = CustomerCategory.all
+  end
+
   private
     def set_customer
       @customer = Customer.find(params[:id])

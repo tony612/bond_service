@@ -32,3 +32,8 @@ angular.module('bondserviceServices', ['ngResource'])
     update: {method: 'PUT'}
   })
 ])
+.factory('CustomerCategories', ['$resource', ($resource) ->
+  $resource('/customers/categories.json', {}, {
+    index: {method:'GET', isArray: true}
+  })
+])

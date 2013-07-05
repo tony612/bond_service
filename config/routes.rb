@@ -3,6 +3,7 @@ BondService::Application.routes.draw do
     collection do
       get "upload"
       post "import"
+      get "categories"
     end
   end
   resources :plans

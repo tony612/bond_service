@@ -13,26 +13,27 @@ CustomerIndexCtrl = ($scope, Customers, Customer) ->
 
 CustomerIndexCtrl.$inject = ['$scope', 'Customers', 'Customer']
 
-CustomerNewCtrl = ($scope, $location, Customers) ->
+CustomerNewCtrl = ($scope, $location, Customers, CustomerCategories) ->
   $scope.customer = {}
+  $scope.categories = CustomerCategories.index()
 
   $scope.create = (customer) ->
-    debugger
     u = new Customers({customer: customer})
     u.$save (customer) ->
       $location.path("/customers/#{customer.id}")
 
-CustomerNewCtrl.$inject = ['$scope', '$location', 'Customers']
+CustomerNewCtrl.$inject = ['$scope', '$location', 'Customers', 'CustomerCategories']
 
 CustomerCtrl = ($scope, $routeParams, Customer) ->
   $scope.customer = Customer.show({customerId: $routeParams.customerId})
 
 CustomerCtrl.$inject = ['$scope', '$routeParams', 'Customer']
 
-CustomerEditCtrl = ($scope, $routeParams, $location, Customer) ->
+CustomerEditCtrl = ($scope, $routeParams, $location, Customer, CustomerCategories) ->
+  $scope.categories = CustomerCategories.index()
   customerId = $routeParams.customerId
   customer = new Customer.show({customerId: customerId}, (customer) ->
-    $scope.customer = {name: customer.name, category: customer.category, desc: customer.desc, content: customer.content}
+    $scope.customer = {name: customer.name, category: customer.category, desc: customer.desc, content: customer.content, customer_category_id: customer.category.id}
   )
 
   $scope.update = (customer) ->
@@ -41,7 +42,7 @@ CustomerEditCtrl = ($scope, $routeParams, $location, Customer) ->
     )
 
 
-CustomerEditCtrl.$inject = ['$scope', '$routeParams', '$location', 'Customer']
+CustomerEditCtrl.$inject = ['$scope', '$routeParams', '$location', 'Customer', 'CustomerCategories']
 
 CustomerImportCtrl = ($scope) ->
   $scope.customer = {}
