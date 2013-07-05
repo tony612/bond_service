@@ -6,6 +6,9 @@ BondService::Application.routes.draw do
       get "categories"
       post "categories", :to => "customers#create_category"
       get "new_category"
+      get "categories/:category_id/edit", :to => "customers#edit_category"
+      get "categories/:category_id", :to => "customers#show_category"
+      put "categories/:category_id", :to => "customers#update_category"
     end
   end
   resources :plans

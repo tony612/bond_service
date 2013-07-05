@@ -17,9 +17,16 @@ class CustomersController < ApplicationController
   def edit
   end
 
+  def show_category
+    @category = CustomerCategory.find(params[:category_id])
+  end
 
   def new_category
     @category = CustomerCategory.new
+  end
+
+  def edit_category
+    @category = CustomerCategory.find(params[:category_id])
   end
 
   def create_category
@@ -33,6 +40,19 @@ class CustomersController < ApplicationController
       end
     end
   end
+
+  def update_category
+    @category = CustomerCategory.find(params[:category_id])
+
+    respond_to do |format|
+      if @category.update(customer_category_params)
+        format.json { head :no_content }
+      else
+        format.json { render json: @category.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def create
     @customer = Customer.new(customer_params)
 

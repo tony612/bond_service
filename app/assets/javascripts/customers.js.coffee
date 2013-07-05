@@ -76,6 +76,20 @@ CustomerCategoryIndexCtrl = ($scope, CustomerCategory, CustomerCategories) ->
     )
 
 CustomerCategoryIndexCtrl.$inject = ['$scope', 'CustomerCategory', 'CustomerCategories']
+
+CustomerCategoryEditCtrl = ($scope, $routeParams, $location, CustomerCategory) ->
+  categoryId = $routeParams.categoryId
+  category = new CustomerCategory.show({categoryId: categoryId}, (category) ->
+    $scope.category = {name: category.name, desc: category.desc}
+  )
+
+  $scope.update = (category) ->
+    new CustomerCategory({customer_category: category}).$update({categoryId: categoryId}, (category) ->
+      $location.path("/customers/categories")
+    )
+
+CustomerCategoryEditCtrl.$inject = ['$scope', '$routeParams', '$location', 'CustomerCategory']
+
 window.CustomerIndexCtrl = CustomerIndexCtrl
 window.CustomerNewCtrl = CustomerNewCtrl
 window.CustomerCtrl = CustomerCtrl
@@ -83,3 +97,4 @@ window.CustomerEditCtrl = CustomerEditCtrl
 window.CustomerImportCtrl = CustomerImportCtrl
 window.CustomerNewCategoryCtrl = CustomerNewCategoryCtrl
 window.CustomerCategoryIndexCtrl = CustomerCategoryIndexCtrl
+window.CustomerCategoryEditCtrl = CustomerCategoryEditCtrl
