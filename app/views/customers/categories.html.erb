@@ -1,0 +1,34 @@
+<h1>Customer Category</h1>
+
+<div>
+  Filter: <input ng-model="query" />
+  Sort by:
+  <select ng-model="orderProp">
+    <option value="id">Id</option>
+    <option value="name">Name</option>
+    <option value="desc">Description</option>
+    <option value="desc">Action</option>
+  </select>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="category in categories | filter:query | orderBy:orderProp" id="category_{{category.id}}">
+        <td>{{category.id}}</td>
+        <td>{{category.name}}</td>
+        <td>{{category.desc}}</td>
+        <td>
+          <a href="#/customers/categories/{{category.id}}/edit" class="sepV_a"><i class="icon-pencil"></i></a>
+          <a href="javascript:void(0)" ng-click="destroy({{category.id}})"><i class="icon-trash"></i></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

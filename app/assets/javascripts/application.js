@@ -16,5 +16,6 @@
 //= require unstable/angular-resource
 //= require bootstrap
 //= require angular-strap
+//= require ui-bootstrap-custom-tpls-0.4.0
 //= require_tree ./gebo
 //= require_tree .

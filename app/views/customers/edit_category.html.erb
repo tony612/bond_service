@@ -1,0 +1,26 @@
+<h3 class="heading">Edit Customer Category</h3>
+<form class="form_validation_reg" >
+  <div class="formSep">
+    <div class="row-fluid">
+      <div class="span4">
+        <label for="category_name">Name <span class="f_req">*</span></label>
+        <input id="category_name" type="text" name="category[name]" class="span12" ng-model="category.name" />
+      </div>
+    </div>
+  </div>
+  <div class="formSep">
+    <div class="row-fluid">
+      <div class="span4">
+        <label><span class="error_placement">Description</span>
+          <span class="f_req">*</span>
+        </label>
+        <textarea type="text" value="male" name="category[desc]" ng-model="category.desc" class="span12" />
+      </div>
+    </div>
+  </div>
+  <div class="form-actions">
+    <button class="btn btn-inverse" type="submit" ng-click="update(category)">Update</button>
+    <a href="#/customers/categories" class="btn">Cancel</a>
+  </div>
+</form>
+

@@ -1,4 +1,4 @@
-<h3 class="heading">New Customer</h3>
+<h3 class="heading">Edit Customer</h3>
 <form class="form_validation_reg" >
   <div class="formSep">
     <div class="row-fluid">
@@ -55,6 +55,16 @@
       <div class="span8">
         <label for="customer_fund_account">Fund Account </label>
         <input id="customer_fund_account" type="text" name="customer[fund_account]" class="span12" ng-model="customer.fund_account" />
+      </div>
+    </div>
+  </div>
+  <div class="formSep">
+    <div class="row-fluid">
+      <div class="span8">
+        <label for="customer_category_id">Category</label>
+        <select name="customer[customer_category_id]" ng-model="customer.customer_category_id" ng-options="cat.id as cat.name for cat in categories">
+          <!-- <option ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option> -->
+        </select>
       </div>
     </div>
   </div>
