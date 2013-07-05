@@ -1,4 +1,4 @@
-angular.module('bondservice', ['bondserviceServices', '$strap.directives', 'bondDirectives'])
+angular.module('bondservice', ['bondserviceServices', '$strap.directives', 'bondDirectives', 'ui.bootstrap'])
   .config(['$routeProvider', ($routeProvider) ->
     $routeProvider
     .when('/users', {templateUrl: '/users.html', controller: UserIndexCtrl})
@@ -27,6 +27,11 @@ angular.module('bondservice', ['bondserviceServices', '$strap.directives', 'bond
     .when('/customers/new', {templateUrl: '/customers/new.html', controller: CustomerNewCtrl})
     .when('/customers/import', {templateUrl: '/customers/import.html', controller: CustomerImportCtrl})
     # The templateUrl param(func) method is available in the unstable of angular
+    .when('/customers/new_category', {templateUrl: '/customers/new_category.html', controller: CustomerNewCategoryCtrl})
+    .when('/customers/categories', {templateUrl: '/customers/categories.html', controller: CustomerCategoryIndexCtrl})
+    .when('/customers/categories/:categoryId/edit', {templateUrl: (params) ->
+      "/customers/categories/#{params.categoryId}/edit"
+    , controller: CustomerCategoryEditCtrl})
     .when('/customers/:customerId', {templateUrl: (params) ->
       "/customers/#{params.customerId}"
     , controller: CustomerCtrl})

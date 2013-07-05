@@ -42,8 +42,8 @@
             <li class="dropdown">
               <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)"><i class="icon-user icon-white"></i> Users <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><%= link_to 'Add', '#users/new' %></li>
-                <li><%= link_to 'List', '#users' %></li>
+                <li><%= link_to 'Add', '/#users/new' %></li>
+                <li><%= link_to 'List', '/#users' %></li>
                 <li><%= link_to 'Import Data', upload_users_path %></li>
               </ul>
             </li>
@@ -53,8 +53,8 @@
               <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)"><i class="icon-list-alt icon-white"></i> Plan <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><%= link_to 'Add', '/#plans/new' %></li>
-                <li><%= link_to 'List', '#plans' %></li>
-                <li><%= link_to 'Import Data', '#plans/import' %></li>
+                <li><%= link_to 'List', '/#plans' %></li>
+                <li><%= link_to 'Import Data', '/#plans/import' %></li>
               </ul>
             </li>
           <% end %>
@@ -62,8 +62,10 @@
             <li class="dropdown">
               <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)"><i class="icon-smile icon-white"></i> Customer <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><%= link_to 'Add', '#customers/new' %></li>
-                <li><%= link_to 'List', '#customers' %></li>
+                <li><%= link_to 'Add', '/#customers/new' %></li>
+                <li><%= link_to 'List', '/#customers' %></li>
+                <li><%= link_to 'Add Category', '/#customers/new_category' %></li>
+                <li><%= link_to 'List Category', '/#customers/categories' %></li>
                 <li><%= link_to 'Import Data', upload_customers_path %></li>
               </ul>
             </li>

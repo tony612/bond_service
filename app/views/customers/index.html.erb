@@ -24,6 +24,7 @@
         <th>Phone</th>
         <th>Address</th>
         <th>Fund account</th>
+        <th>Category</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -37,6 +38,7 @@
         <td>{{customer.phone}}</td>
         <td>{{customer.address}}</td>
         <td>{{customer.fund_account}}</td>
+        <td><a href="javascript:void(0)" popover-trigger="mouseenter" popover="{{customer.category.desc}}" popover-title="{{customer.category.name}}">{{customer.category.name}}</a></td>
         <td>
           <a href="#/customers/{{customer.id}}" class="sepV_a"><i class="icon-eye-open"></i></a>
           <a href="#/customers/{{customer.id}}/edit" class="sepV_a"><i class="icon-pencil"></i></a>
