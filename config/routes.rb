@@ -4,6 +4,8 @@ BondService::Application.routes.draw do
       get "upload"
       post "import"
       get "categories"
+      post "categories", :to => "customers#create_category"
+      get "new_category"
     end
   end
   resources :plans

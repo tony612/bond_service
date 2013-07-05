@@ -52,6 +52,15 @@ CustomerImportCtrl = ($scope) ->
 
 CustomerImportCtrl.$inject = ['$scope']
 
+CustomerNewCategoryCtrl = ($scope, $location, CustomerCategories) ->
+  $scope.category = {}
+
+  $scope.create = (category) ->
+    u = new CustomerCategories({customer_category: category})
+    u.$save (category) ->
+      $location.path("/customers")
+
+CustomerNewCategoryCtrl.$inject = ['$scope', '$location', 'CustomerCategories']
 
 CustomerCategoryIndexCtrl = ($scope, CustomerCategory, CustomerCategories) ->
   $scope.categories = CustomerCategories.index()
@@ -72,4 +81,5 @@ window.CustomerNewCtrl = CustomerNewCtrl
 window.CustomerCtrl = CustomerCtrl
 window.CustomerEditCtrl = CustomerEditCtrl
 window.CustomerImportCtrl = CustomerImportCtrl
+window.CustomerNewCategoryCtrl = CustomerNewCategoryCtrl
 window.CustomerCategoryIndexCtrl = CustomerCategoryIndexCtrl

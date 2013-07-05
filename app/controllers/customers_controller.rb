@@ -17,6 +17,22 @@ class CustomersController < ApplicationController
   def edit
   end
 
+
+  def new_category
+    @category = CustomerCategory.new
+  end
+
+  def create_category
+    @category = CustomerCategory.new(customer_category_params)
+
+    respond_to do |format|
+      if @category.save
+        format.json { render json: @category }
+      else
+        format.json { render msg: "Saved error!"}
+      end
+    end
+  end
   def create
     @customer = Customer.new(customer_params)
 
@@ -68,6 +84,10 @@ class CustomersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
-      params.require(:customer).permit(:name, :fund_account, :gender, :id_no, :address, :phone, :birthday)
+      params.require(:customer).permit(:name, :fund_account, :gender, :id_no, :address, :phone, :birthday, :customer_category_id)
+    end
+
+    def customer_category_params
+      params.require(:customer_category).permit(:name, :desc)
     end
 end
