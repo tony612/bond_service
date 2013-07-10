@@ -7,4 +7,10 @@ class Plan < ActiveRecord::Base
       PlanSetting.create!(:plan_id => self.id, :customer_category_id => cat_id)
     end
   end
+
+  def customers
+    customer_categories.inject([]) do |cs, cat|
+      cs.concat cat.customers
+    end
+  end
 end

@@ -29,6 +29,8 @@ class PlansController < ApplicationController
   def update
     @plan = Plan.find(params[:id])
     if @plan.update_attributes(plan_params)
+      @plan.plan_settings.delete_all
+      @plan.create_retionship_with_customer(customer_category_id_params[:customer_category_ids])
       respond_to do |format|
         format.html { redirect_to plans_path }
         format.json { render :nothing => true, :status => :ok }
@@ -44,6 +46,21 @@ class PlansController < ApplicationController
   def destroy
     @plan = Plan.find(params[:id])
     @plan.destroy
+    respond_to do |format|
+      format.json { render :nothing => true, :status => :ok }
+    end
+  end
+
+  def publish
+    @plan = Plan.find(params[:id])
+    msg = PlanMailer.publish(@plan)
+
+    @plan.customers.each do |customer|
+      mail = msg.dup
+      mail.to = customer.email
+      mail.deliver
+    end
+
     respond_to do |format|
       format.json { render :nothing => true, :status => :ok }
     end
