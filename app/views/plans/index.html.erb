@@ -19,6 +19,7 @@
         <th>Category</th>
         <th>Description</th>
         <th>Content</th>
+        <th>Customer Categories</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -29,6 +30,13 @@
         <td>{{plan.category}}</td>
         <td>{{plan.desc}}</td>
         <td>{{plan.content}}</td>
+        <td>
+          <ul class="list_c">
+            <li ng-repeat="cc in plan.customer_categories">
+              {{cc.name}}
+            </li>
+          </ul>
+        </td>
         <td>
           <a href="#/plans/{{plan.id}}" class="sepV_a"><i class="icon-eye-open"></i></a>
           <a href="#/plans/{{plan.id}}/edit" class="sepV_a"><i class="icon-pencil"></i></a>
