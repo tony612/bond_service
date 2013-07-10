@@ -4,10 +4,6 @@ class PlansController < ApplicationController
 
   def index
     @plans = Plan.all
-    respond_with do |format|
-      format.html
-      format.json { render json: @plans }
-    end
   end
 
   def new
@@ -15,10 +11,6 @@ class PlansController < ApplicationController
 
   def show
     @plan = Plan.find(params[:id])
-    respond_with do |format|
-      format.html
-      format.json { render json: @plan }
-    end
   end
 
   def create
