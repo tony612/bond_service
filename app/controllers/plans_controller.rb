@@ -51,6 +51,21 @@ class PlansController < ApplicationController
     end
   end
 
+  def publish
+    @plan = Plan.find(params[:id])
+    msg = PlanMailer.publish(@plan)
+
+    @plan.customers.each do |customer|
+      mail = msg.dup
+      mail.to = customer.email
+      mail.deliver
+    end
+
+    respond_to do |format|
+      format.json { render :nothing => true, :status => :ok }
+    end
+  end
+
 private
   def plan_params
     params.required(:plan).permit(:name, :category, :desc, :content)
