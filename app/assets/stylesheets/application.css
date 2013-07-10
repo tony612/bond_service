@@ -11,6 +11,7 @@
  *= require_self
  *= require bootstrap
  *= require bootstrap-responsive
+ *= require bootstrap-select
  *= require font-awesome
  *= require_tree .
  */

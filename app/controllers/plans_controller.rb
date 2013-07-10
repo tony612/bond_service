@@ -4,10 +4,6 @@ class PlansController < ApplicationController
 
   def index
     @plans = Plan.all
-    respond_with do |format|
-      format.html
-      format.json { render json: @plans }
-    end
   end
 
   def new
@@ -15,15 +11,12 @@ class PlansController < ApplicationController
 
   def show
     @plan = Plan.find(params[:id])
-    respond_with do |format|
-      format.html
-      format.json { render json: @plan }
-    end
   end
 
   def create
     @plan = Plan.new(plan_params)
     if @plan.save
+      @plan.create_retionship_with_customer(customer_category_id_params[:customer_category_ids])
       respond_with { |format| format.json {render json: @plan} }
     else
       render json: {msg: "Saved error!"}
@@ -59,5 +52,8 @@ class PlansController < ApplicationController
 private
   def plan_params
     params.required(:plan).permit(:name, :category, :desc, :content)
+  end
+  def customer_category_id_params
+    params.required(:plan).permit(:customer_category_ids => [])
   end
 end
