@@ -11,6 +11,8 @@
     <option value="content">Content</option>
   </select>
 
+  <a href="javascript:void(0)" ng-click="publish({{plan.id}})" class="btn btn-success publish-all">Publish All</a>
+
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -39,7 +41,7 @@
           </ul>
         </td>
         <td>
-          <a href="#/plans/{{plan.id}}/publish" class="btn btn-success">Publish</a>
+          <a href="javascript:void(0)" ng-click="publish({{plan.id}})" class="btn btn-success">Publish</a>
         </td>
         <td>
           <a href="#/plans/{{plan.id}}" class="sepV_a"><i class="icon-eye-open"></i></a>

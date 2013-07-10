@@ -1,4 +1,4 @@
-PlanIndexCtrl = ($scope, Plans, Plan) ->
+PlanIndexCtrl = ($scope, $http, Plans, Plan) ->
   $scope.plans = Plans.index()
   $scope.orderProp = "id"
 
@@ -11,7 +11,14 @@ PlanIndexCtrl = ($scope, Plans, Plan) ->
       console.log(response)
     )
 
-PlanIndexCtrl.$inject = ['$scope', 'Plans', 'Plan']
+  $scope.publish = (planId) ->
+    debugger
+    $http.get("/plans/#{planId}/publish.json").success (data, status) ->
+      debugger
+      console.log(data)
+      console.log(status)
+
+PlanIndexCtrl.$inject = ['$scope', '$http', 'Plans', 'Plan']
 
 PlanNewCtrl = ($scope, $location, Plans, CustomerCategories) ->
   $scope.plan = {}
