@@ -11,6 +11,8 @@
     <option value="content">Content</option>
   </select>
 
+  <a href="javascript:void(0)" ng-click="publish({{plan.id}})" class="btn btn-success publish-all">Publish All</a>
+
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -20,6 +22,7 @@
         <th>Description</th>
         <th>Content</th>
         <th>Customer Categories</th>
+        <th>Publish</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -36,6 +39,9 @@
               {{cc.name}}
             </li>
           </ul>
+        </td>
+        <td>
+          <a href="javascript:void(0)" ng-click="publish({{plan.id}})" class="btn btn-success">Publish</a>
         </td>
         <td>
           <a href="#/plans/{{plan.id}}" class="sepV_a"><i class="icon-eye-open"></i></a>

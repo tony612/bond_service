@@ -33,7 +33,7 @@ CustomerEditCtrl = ($scope, $routeParams, $location, Customer, CustomerCategorie
   $scope.categories = CustomerCategories.index()
   customerId = $routeParams.customerId
   customer = new Customer.show({customerId: customerId}, (customer) ->
-    $scope.customer = {name: customer.name, category: customer.category, desc: customer.desc, content: customer.content, customer_category_id: customer.category.id}
+    $scope.customer = customer
   )
 
   $scope.update = (customer) ->

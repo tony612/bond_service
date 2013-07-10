@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+  <title>Bond plan</title>
+  <style type="text/css">
+    <style type="text/css">
+      img {outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;}
+      a img {border:none;}
+      .image_fix {display:block;}
+      p {margin: 1em 0;}
+      h1, h2, h3, h4, h5, h6 {color: black !important;}
+      h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color: blue !important;}
+      h1 a:active, h2 a:active,  h3 a:active, h4 a:active, h5 a:active, h6 a:active {
+        color: red !important;
+      }
+      h1 a:visited, h2 a:visited,  h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
+        color: purple !important;
+      }
+      table td {border-collapse: collapse;}
+      table { border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; }
+      a {color: orange;}
+      h1{font-size:2em;margin:.67em 0}
+      h2{font-size:1.5em;margin:.83em 0}
+      h3{font-size:1.17em;margin:1em 0}
+      h4{font-size:1em;margin:1.33em 0}
+      h5{font-size:.83em;margin:1.67em 0}
+      h6{font-size:.67em;margin:2.33em 0}
+      html{font-size:100%;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+      html,button,input,select,textarea{font-family:sans-serif}
+      b,strong{font-weight:700}
+      small {font-size: 80%;}
+    </style>
+  </style>
+</head>
+<body>
+  <h1>Bond plan</h1>
+  <br/>
+  <small>from <a href="http://bond-service.herokuapp.com">http://bond-service.herokuapp.com</a></small>
+  <br/>
+  <br/>
+  <table>
+    <tr>
+      <td><b>Title</b></td>
+      <td><%= @plan.name %></td>
+    </tr>
+    <tr>
+      <td><b>Category</b></td>
+      <td><%= @plan.category %></td>
+    </tr>
+    <tr>
+      <td><b>Description</b></td>
+      <td><%= @plan.desc %></td>
+    </tr>
+    <tr>
+      <td><b>Content</b></td>
+      <td><%= @plan.content %></td>
+    </tr>
+  </table>
+</body>

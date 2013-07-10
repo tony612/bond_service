@@ -21,6 +21,11 @@ angular.module('bondserviceServices', ['ngResource'])
     update: {method: 'PUT'}
   })
 ])
+.factory('PlanPublish', ['$resource', ($resource) ->
+  $resource('/plans/:planId/publish.json', {}, {
+    publish: {method: 'GET'}
+  })
+])
 .factory('Customers', ['$resource', ($resource) ->
   $resource('/customers.json', {}, {
     index: {method: 'GET', isArray: true}

@@ -1,6 +1,6 @@
 class Customer < ActiveRecord::Base
   belongs_to :customer_category
-  VALID_HEADER = %w{name fund_account gender id_no address phone birthday}
+  VALID_HEADER = %w{name fund_account gender id_no address phone birthday email}
 
   def category
     customer_category
@@ -13,6 +13,7 @@ class Customer < ActiveRecord::Base
       row = Hash[[header, excel.row(i)].transpose]
       row.delete_if { |k, v| !VALID_HEADER.include?(k) }
       row["phone"] = row["phone"].floor.to_s if row['phone'] and row['phone'].is_a?(Float)
+      row["email"] = "#{row["id_no"]}@example.com" unless header.include?("email")
       Customer.create!(row)
     end
   end
