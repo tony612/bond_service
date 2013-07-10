@@ -13,15 +13,16 @@ PlanIndexCtrl = ($scope, Plans, Plan) ->
 
 PlanIndexCtrl.$inject = ['$scope', 'Plans', 'Plan']
 
-PlanNewCtrl = ($scope, $location, Plans) ->
+PlanNewCtrl = ($scope, $location, Plans, CustomerCategories) ->
   $scope.plan = {}
+  $scope.categories = CustomerCategories.index()
 
   $scope.create = (plan) ->
     u = new Plans({plan: plan})
     u.$save (plan) ->
       $location.path("/plans/#{plan.id}")
 
-PlanNewCtrl.$inject = ['$scope', '$location', 'Plans']
+PlanNewCtrl.$inject = ['$scope', '$location', 'Plans', 'CustomerCategories']
 
 PlanCtrl = ($scope, $routeParams, Plan) ->
   $scope.plan = Plan.show({planId: $routeParams.planId})
