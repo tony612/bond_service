@@ -12,7 +12,11 @@ BondService::Application.routes.draw do
       delete "categories/:category_id", :to => "customers#destroy_category"
     end
   end
-  resources :plans
+  resources :plans do
+    member do
+      get "publish"
+    end
+  end
   get "dashboard/index"
   post "users", :to => "users#create"
   get "users/modify", :to => "users#modify"
