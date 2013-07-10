@@ -32,7 +32,7 @@ PlanCtrl.$inject = ['$scope', '$routeParams', 'Plan']
 PlanEditCtrl = ($scope, $routeParams, $location, Plan) ->
   planId = $routeParams.planId
   plan = new Plan.show({planId: planId}, (plan) ->
-    $scope.plan = {name: plan.name, category: plan.category, desc: plan.desc, content: plan.content}
+    $scope.plan = {name: plan.name, category: plan.category, desc: plan.desc, content: plan.content, customer_categories: plan.customer_categories}
   )
 
   $scope.update = (plan) ->

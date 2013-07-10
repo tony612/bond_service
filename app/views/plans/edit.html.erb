@@ -24,6 +24,12 @@
       <textarea id="plan_content" category="plan[content]" cols="10" rows="3" class="span8" ng-model="plan.content"></textarea>
     </div>
   </div>
+  <div class="formSep">
+    <div class="row-fluid">
+      <label for="plan_customer_categories">Customer Category </label>
+      <select id="plan_customer_categories" name="plan[customer_category_ids]" multiple class="span4" ng-model="plan.customer_category_ids" ng-options="cat.id as cat.name for cat in categories" data-style="btn-info" bs-select></select>
+    </div>
+  </div>
   <div class="form-actions">
     <button class="btn btn-inverse" type="submit" ng-click="update(plan)">Save changes</button>
     <a href="#/plans" class="btn">Cancel</a>
