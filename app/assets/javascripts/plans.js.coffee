@@ -15,7 +15,11 @@ PlanIndexCtrl.$inject = ['$scope', 'Plans', 'Plan']
 
 PlanNewCtrl = ($scope, $location, Plans, CustomerCategories) ->
   $scope.plan = {}
-  $scope.categories = CustomerCategories.index()
+  CustomerCategories.index((categories) ->
+    cc = for cat in categories
+      {id: cat.id, name: cat.name, desc: cat.desc}
+    $scope.categories = [{id: 0, name: ""}].concat cc
+  )
 
   $scope.create = (plan) ->
     u = new Plans({plan: plan})
