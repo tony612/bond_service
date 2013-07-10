@@ -10,5 +10,6 @@ protected
     @user_count = User.count
     @plan_count = Plan.count
     @customer_count = Customer.count
+    @customer_category_count = CustomerCategory.count
   end
 end
