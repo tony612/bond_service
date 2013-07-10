@@ -20,6 +20,7 @@
         <th>Description</th>
         <th>Content</th>
         <th>Customer Categories</th>
+        <th>Publish</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -36,6 +37,9 @@
               {{cc.name}}
             </li>
           </ul>
+        </td>
+        <td>
+          <a href="#/plans/{{plan.id}}/publish" class="btn btn-success">Publish</a>
         </td>
         <td>
           <a href="#/plans/{{plan.id}}" class="sepV_a"><i class="icon-eye-open"></i></a>
