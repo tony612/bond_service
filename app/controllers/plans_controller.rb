@@ -16,6 +16,7 @@ class PlansController < ApplicationController
   def create
     @plan = Plan.new(plan_params)
     if @plan.save
+      @plan.create_retionship_with_customer(customer_category_id_params[:customer_category_ids])
       respond_with { |format| format.json {render json: @plan} }
     else
       render json: {msg: "Saved error!"}
@@ -51,5 +52,8 @@ class PlansController < ApplicationController
 private
   def plan_params
     params.required(:plan).permit(:name, :category, :desc, :content)
+  end
+  def customer_category_id_params
+    params.required(:plan).permit(:customer_category_ids => [])
   end
 end
