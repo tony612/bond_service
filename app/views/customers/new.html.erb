@@ -1,13 +1,13 @@
 <h3 class="heading">New Customer</h3>
-<form class="form_validation_reg" >
+<form class="form_validation_reg" name="form">
   <div class="formSep">
     <div class="row-fluid">
       <div class="span4">
         <label for="customer_name">Name <span class="f_req">*</span></label>
-        <input id="customer_name" type="text" name="customer[name]" class="span12" ng-model="customer.name" />
+        <input id="customer_name" type="text" name="customer[name]" class="span12" ng-model="customer.name" required />
       </div>
       <div class="span4">
-        <label><span class="error_placement">Gender</span> <span class="f_req">*</span></label>
+        <label>Gender</label>
         <label class="radio inline">
           <input type="radio" value="male" name="customer[gender]" ng-model="customer.gender">
             Male
@@ -25,8 +25,8 @@
   <div class="formSep">
     <div class="row-fluid">
       <div class="span4">
-        <label for="customer_id_no">ID no. </label>
-        <input id="customer_id_no" type="text" name="customer[id_no]" class="span12" ng-model="customer.id_no" />
+        <label for="customer_id_no">ID no. <span class="f_req">*</span></label>
+        <input id="customer_id_no" type="text" name="customer[id_no]" class="span12" ng-model="customer.id_no" required ng-pattern="/^[0-9]+$/"/>
       </div>
       <div class="span4">
         <label for="customer_birthday">Birthday </label>
@@ -41,6 +41,10 @@
   <div class="formSep">
     <div class="row-fluid">
       <div class="span4">
+        <label for="customer_email">Email <span class="f_req">*</span></label>
+        <input id="customer_email" type="email" name="customer[email]" class="span12" ng-model="customer.email" required />
+      </div>
+      <div class="span4">
         <label for="customer_phone">Phone </label>
         <input id="customer_phone" type="text" name="customer[phone]" class="span12" ng-model="customer.phone" />
       </div>
@@ -53,8 +57,8 @@
   <div class="formSep">
     <div class="row-fluid">
       <div class="span8">
-        <label for="customer_fund_account">Fund Account </label>
-        <input id="customer_fund_account" type="text" name="customer[fund_account]" class="span12" ng-model="customer.fund_account" />
+        <label for="customer_fund_account">Fund Account <span class="f_req">*</span></label>
+        <input id="customer_fund_account" type="text" name="customer[fund_account]" class="span12" ng-model="customer.fund_account" required ng-pattern="/^[0-9]+$/"/>
       </div>
     </div>
   </div>
@@ -68,7 +72,7 @@
     </div>
   </div>
   <div class="form-actions">
-    <button class="btn btn-inverse" type="submit" ng-click="create(customer)">Create</button>
+    <button class="btn btn-inverse" type="submit" ng-click="create(customer)" ng-disabled="form.$invalid">Create</button>
     <a href="#/customers" class="btn">Cancel</a>
   </div>
 </form>
