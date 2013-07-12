@@ -19,7 +19,17 @@ UserNewCtrl = ($scope, $location, Users) ->
   $scope.create = (user) ->
     u = new Users({user: user})
     u.$save (user) ->
-      $location.path("/users/#{user.id}")
+      if user.id?
+        $location.path("/users/#{user.id}") if user.id?
+      else
+        errors = ""
+        for key, msgs of user.error_msg
+          errors = errors.concat msgs.map((msg) -> "<li>#{key} #{msg}</li>")
+        error_html = '<div class="alert alert-block alert-error fade in error-msgs">
+          <a href="javascript:void(0)" data-dismiss="alert" class="close">×</a>
+          <h4 class="alert-heading">Some errors were raised!</h4>
+          <ul>'
+        $('.error-msgs').html(error_html + errors + '</ul></div>')
 
 UserNewCtrl.$inject = ['$scope', '$location', 'Users']
 
@@ -31,12 +41,10 @@ UserCtrl.$inject = ['$scope', '$routeParams', 'User']
 UserEditCtrl = ($scope, $routeParams, $location, User) ->
   userId = $routeParams.userId
   user = new User.show({userId: userId}, (user) ->
-    debugger
-    $scope.user = {email: user.email}
+    $scope.user = {email: user.email, number: user.number, name: user.name, desc: user.desc}
   )
 
   $scope.update = (user) ->
-    debugger
     new User({user: user}).$update({userId: userId}, (user) ->
       $location.path("/users/#{userId}")
     )
