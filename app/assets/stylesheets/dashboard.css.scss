@@ -2,3 +2,12 @@
   margin-left: -200px;
   margin-top: 100px;
 }
+
+input.ng-invalid-pattern:focus, input.ng-invalid-email:focus {
+  border-color: #e9322d;
+  -webkit-box-shadow: 0 0 6px #f8b9b7;
+  -moz-box-shadow: 0 0 6px #f8b9b7;
+  box-shadow: 0 0 6px #f8b9b7;
+  color: #b94a48;
+  border-color: #ee5f5b;
+}

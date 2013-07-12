@@ -4,18 +4,18 @@
     <div class="row-fluid">
       <div class="span4">
         <label for="user_email">Email <span class="f_req">*</span></label>
-        <input id="user_email" type="text" name="user[email]" class="span12" ng-model="user.email" />
+        <input id="user_email" type="email" name="user[email]" class="span12" ng-model="user.email" required />
       </div>
     </div>
   </div>
   <div class="formSep">
     <div class="row-fluid">
       <div class="span4">
-        <label for="user_password">Password <span class="f_req">*</span></label>
+        <label for="user_password">Password </label>
         <input id="user_password" type="password" name="user[password]" class="span12" ng-model="user.password" />
       </div>
       <div class="span4">
-        <label for="user_password_confirmation">Password Confirmation <span class="f_req">*</span></label>
+        <label for="user_password_confirmation">Password Confirmation </label>
         <input id="user_password_confirmation" type="password" name="user[password_confirmation]" class="span12" ng-model="user.password_confirmation" />
       </div>
     </div>
@@ -24,7 +24,7 @@
     <div class="row-fluid">
       <div class="span4">
         <label for="user_number">Number <span class="f_req">*</span></label>
-        <input id="user_number" type="text" name="user[number]" class="span12" ng-model="user.number" />
+        <input id="user_number" type="text" name="user[number]" class="span12" ng-model="user.number" ng-pattern="/^[0-9]+$/" />
       </div>
       <div class="span4">
         <label for="user_name">Name <span class="f_req">*</span></label>
