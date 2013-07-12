@@ -16,10 +16,10 @@ class PlansController < ApplicationController
   def create
     @plan = Plan.new(plan_params)
     if @plan.save
-      @plan.create_retionship_with_customer(customer_category_id_params[:customer_category_ids])
+      @plan.create_retionship_with_customer(customer_category_id_params[:customer_category_ids]) if customer_category_id_params[:customer_category_ids]
       respond_with { |format| format.json {render json: @plan} }
     else
-      render json: {msg: "Saved error!"}
+      render json: {error_msg: @plan.errors.messages}
     end
   end
 
