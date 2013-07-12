@@ -1,6 +1,6 @@
 class PlansController < ApplicationController
   respond_to :html, :json
-  layout false
+  layout false, :except => ["upload"]
 
   def index
     @plans = Plan.all
@@ -64,6 +64,18 @@ class PlansController < ApplicationController
     respond_to do |format|
       format.json { render :nothing => true, :status => :ok }
     end
+  end
+
+  def upload
+  end
+
+  def import
+    #begin
+      Plan.import params[:plan][:file]
+    #rescue
+    #  return redirect_to upload_plans_path, :flash => {error_msg: "Wrong file"}
+    #end
+    redirect_to root_path(:anchor => "plans")
   end
 
 private

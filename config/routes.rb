@@ -16,6 +16,10 @@ BondService::Application.routes.draw do
     member do
       get "publish"
     end
+    collection do
+      get "upload"
+      post "import"
+    end
   end
   get "dashboard/index"
   post "users", :to => "users#create"
