@@ -65,7 +65,11 @@ class UsersController < ApplicationController
   end
 
   def import
-    User.import params[:user][:file]
+    begin
+      User.import params[:user][:file]
+    rescue
+      return redirect_to upload_users_path, :flash => {error_msg: "Wrong file"}
+    end
     redirect_to root_path(:anchor => "users")
   end
 private

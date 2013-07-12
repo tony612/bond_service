@@ -1,4 +1,12 @@
 <h3 class="heading">Import user</h3>
+
+<% if flash and flash[:error_msg] %>
+<div class="alert alert-error">
+  <a class="close" data-dismiss="alert">×</a>
+  <strong>Error: </strong> Please upload right excel file
+</div>
+<% end %>
+
 <%= form_tag import_users_path, multipart: true do %>
   <div data-provides="fileupload" class="fileupload fileupload-new"><input type="hidden" />
     <div class="input-append">
