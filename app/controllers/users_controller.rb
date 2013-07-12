@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     if @user.save
       respond_with { |format| format.json {render json: @user} }
     else
-      render json: {msg: "Saved error!"}
+      render json: {error_msg: @user.errors.messages}
     end
   end
 
@@ -41,10 +41,7 @@ class UsersController < ApplicationController
         format.json { render :nothing => true, :status => :ok }
       end
     else
-      respond_to do |format|
-        format.html { redirect_to users_path }
-        format.json { render :nothing => true, :status => :bad_request }
-      end
+      render json: {error_msg: @user.errors.messages}
     end
   end
 
@@ -68,7 +65,11 @@ class UsersController < ApplicationController
   end
 
   def import
-    User.import params[:user][:file]
+    begin
+      User.import params[:user][:file]
+    rescue
+      return redirect_to upload_users_path, :flash => {error_msg: "Wrong file"}
+    end
     redirect_to root_path(:anchor => "users")
   end
 private

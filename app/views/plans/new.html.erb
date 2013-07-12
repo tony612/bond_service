@@ -1,13 +1,16 @@
 <h3 class="heading">New Plan</h3>
-<form class="form_validation_reg" >
+<div class="error-msgs">
+</div>
+
+<form class="form_validation_reg" name="form">
   <div class="formSep">
     <div class="row-fluid">
       <div class="span4">
         <label for="plan_name">Name <span class="f_req">*</span></label>
-        <input id="plan_name" type="text" name="plan[name]" class="span12" ng-model="plan.name" />
+        <input id="plan_name" type="text" name="plan[name]" class="span12" ng-model="plan.name" required />
       </div>
       <div class="span4">
-        <label for="plan_category">Category <span class="f_req">*</span></label>
+        <label for="plan_category">Category </label>
         <input id="plan_category" type="text" name="plan[category]" class="span12" ng-model="plan.category" />
       </div>
     </div>
@@ -20,8 +23,8 @@
   </div>
   <div class="formSep">
     <div class="row-fluid">
-      <label for="plan_content">Content </label>
-      <textarea id="plan_content" name="plan[content]" cols="10" rows="3" class="span8" ng-model="plan.content"></textarea>
+      <label for="plan_content">Content <span class="f_req">*</span></label>
+      <textarea id="plan_content" name="plan[content]" cols="10" rows="3" class="span8" ng-model="plan.content" required></textarea>
     </div>
   </div>
   <div class="formSep">
@@ -31,7 +34,7 @@
     </div>
   </div>
   <div class="form-actions">
-    <button class="btn btn-inverse" type="submit" ng-click="create(plan)">Save changes</button>
+    <button class="btn btn-inverse" type="submit" ng-click="create(plan)" ng-disabled="form.$invalid">Save changes</button>
     <a href="#/plans" class="btn">Cancel</a>
   </div>
 </form>

@@ -1,4 +1,4 @@
-<h3 class="heading">Import user</h3>
+<h3 class="heading">Import plan</h3>
 
 <% if flash and flash[:error_msg] %>
 <div class="alert alert-error">
@@ -7,7 +7,7 @@
 </div>
 <% end %>
 
-<%= form_tag import_users_path, multipart: true do %>
+<%= form_tag import_plans_path, multipart: true do %>
   <div data-provides="fileupload" class="fileupload fileupload-new"><input type="hidden" />
     <div class="input-append">
       <div class="uneditable-input span2">
@@ -17,13 +17,13 @@
       <span class="btn btn-file">
         <span class="fileupload-new">Select file</span>
         <span class="fileupload-exists">Change</span>
-        <%= file_field_tag "user[file]" %>
+        <%= file_field_tag "plan[file]" %>
       </span>
       <a data-dismiss="fileupload" class="btn fileupload-exists" href="#">Remove</a>
     </div>
     <div class="form-actions">
       <%= submit_tag "Import excel", :class => "btn btn-success" %>
-      <a href="/#/users" class="btn">Cancel</a>
+      <a href="/#/plans" class="btn">Cancel</a>
     </div>
   </div>
 <% end %>

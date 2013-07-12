@@ -29,9 +29,20 @@ PlanNewCtrl = ($scope, $location, Plans, CustomerCategories) ->
   )
 
   $scope.create = (plan) ->
-    u = new Plans({plan: plan})
-    u.$save (plan) ->
-      $location.path("/plans/#{plan.id}")
+    p = new Plans({plan: plan})
+    p.$save (plan) ->
+      if plan.id?
+        $location.path("/plans/#{plan.id}") if plan.id?
+      else
+        debugger
+        errors = ""
+        for key, msgs of plan.error_msg
+          errors = errors.concat msgs.map((msg) -> "<li>#{key} #{msg}</li>")
+        error_html = '<div class="alert alert-block alert-error fade in error-msgs">
+          <a href="javascript:void(0)" data-dismiss="alert" class="close">×</a>
+          <h4 class="alert-heading">Some errors were raised!</h4>
+          <ul>'
+        $('.error-msgs').html(error_html + errors + '</ul></div>')
 
 PlanNewCtrl.$inject = ['$scope', '$location', 'Plans', 'CustomerCategories']
 

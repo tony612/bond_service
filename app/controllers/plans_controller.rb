@@ -1,6 +1,6 @@
 class PlansController < ApplicationController
   respond_to :html, :json
-  layout false
+  layout false, :except => ["upload"]
 
   def index
     @plans = Plan.all
@@ -16,10 +16,10 @@ class PlansController < ApplicationController
   def create
     @plan = Plan.new(plan_params)
     if @plan.save
-      @plan.create_retionship_with_customer(customer_category_id_params[:customer_category_ids])
+      @plan.create_retionship_with_customer(customer_category_id_params[:customer_category_ids]) if customer_category_id_params[:customer_category_ids]
       respond_with { |format| format.json {render json: @plan} }
     else
-      render json: {msg: "Saved error!"}
+      render json: {error_msg: @plan.errors.messages}
     end
   end
 
@@ -64,6 +64,18 @@ class PlansController < ApplicationController
     respond_to do |format|
       format.json { render :nothing => true, :status => :ok }
     end
+  end
+
+  def upload
+  end
+
+  def import
+    #begin
+      Plan.import params[:plan][:file]
+    #rescue
+    #  return redirect_to upload_plans_path, :flash => {error_msg: "Wrong file"}
+    #end
+    redirect_to root_path(:anchor => "plans")
   end
 
 private
